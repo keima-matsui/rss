@@ -28,5 +28,23 @@
         "name": "パチンコ・パチスロ.com",
         "url": "http://pachinkopachisro.com/index.rdf",
         "category": "pachinko"
+    },
+    {
+        "id": "site6",
+        "name": "BIPブログ",
+        "url": "http://bipblog.com/index.rdf",
+        "category": "vip"
+    },
+    {
+        "id": "site7",
+        "name": "カオスちゃんねる",
+        "url": "http://chaos2ch.com/index.rdf",
+        "category": "vip"
+    },
+    {
+        "id": "site8",
+        "name": "FF14速報",
+        "url": "https://ff14net.2chblog.jp/index.rdf",
+        "category": "game"
     }
 ]
