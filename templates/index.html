@@ -1,0 +1,68 @@
+<!DOCTYPE HTML
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ja">
+
+<head>
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>私用あんてな　＼(^o^)／</title>
+	<link id="mystyle" rel="stylesheet" type="text/css" href="/static/cake.feed.css" />
+</head>
+
+<body>
+	<div id="container">
+		<div id="header">
+			<h2>
+				<a href="/">私用あんてな　＼(*^◯^*)／</a>
+			</h2>
+		</div>
+
+		<div id="Navi_wrap">
+			<ul id="globalNavi">
+				<li id="Navi1"><a class="vip" href="/">総合あんてな</a></li>
+			</ul>
+			<ul id="mNavi">
+				<li id="Navi1"><a class="vip" href="/">総合</a></li>
+			</ul>
+		</div>
+
+		<div id="top_content" class="vip">
+			<table>
+				{% for group in grouped_articles %}
+				<tr>
+					<td class="date_line" colspan="4"><span class="date"><b>{{ group.date }}</b></span></td>
+				</tr>
+				{% for article in group.articles %}
+				<tr>
+					<td class="d">{{ article.time }}</td>
+					<td class="t"><a target="_blank" href="{{ article.link }}">{{ article.title }}</a></td>
+					<td class="h"><img src="http://b.hatena.ne.jp/entry/image/{{ article.link }}"></td>
+					<td class="n"><a target="_blank" href="{{ article.site_link }}">{{ article.site_name }}</a></td>
+				</tr>
+				{% endfor %}
+				{% endfor %}
+			</table>
+		</div>
+		<br>
+
+		<div id="und">
+			{% for site in sites %}
+			{% if loop.index0 % 2 == 0 %}
+			<div class="wrapper">
+				{% endif %}
+				<ul>
+					<li class="n vip"><a href="{{ site.url }}" target="_blank">{{ site.name }}</a></li>
+					{% for article in site_articles.get(site.id, []) %}
+					<li class="t"><a target="_blank" href="{{ article.link }}">○{{ article.title }}</a></li>
+					{% endfor %}
+				</ul>
+				{% if loop.index0 % 2 == 1 or loop.last %}
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+</body>
+
+</html>

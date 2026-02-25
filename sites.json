@@ -1,0 +1,32 @@
+[
+    {
+        "id": "site1",
+        "name": "馬鳥速報",
+        "url": "http://blog.livedoor.jp/umadori0726/index.rdf",
+        "category": "game"
+    },
+    {
+        "id": "site2",
+        "name": "VIPPERな俺",
+        "url": "http://blog.livedoor.jp/news23vip/index.rdf",
+        "category": "vip"
+    },
+    {
+        "id": "site3",
+        "name": "オレ的ゲーム速報＠刃",
+        "url": "https://jin115.com/index.rdf",
+        "category": "game"
+    },
+    {
+        "id": "site4",
+        "name": "はちま起稿",
+        "url": "http://blog.esuteru.com/index.rdf",
+        "category": "game"
+    },
+    {
+        "id": "site5",
+        "name": "パチンコ・パチスロ.com",
+        "url": "http://pachinkopachisro.com/index.rdf",
+        "category": "pachinko"
+    }
+]
