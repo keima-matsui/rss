@@ -5,9 +5,24 @@ from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor
 import feedparser
 import requests
+import threading
 from flask import Flask, render_template
 
 app = Flask(__name__)
+
+def keep_alive():
+    """Renderの15分スリープを回避するために定期的に自身にアクセスする"""
+    while True:
+        try:
+            # ご自身のRenderのURLを指定
+            requests.get("https://rss-own.onrender.com/", timeout=10)
+        except Exception:
+            pass
+        # 14分（840秒）ごとに実行
+        time.sleep(840)
+
+# バックグラウンドで定期アクセスのスレッドを開始（Gunicorn起動時にも実行されるようにここに配置）
+threading.Thread(target=keep_alive, daemon=True).start()
 
 CACHE = {
     'time': 0,
