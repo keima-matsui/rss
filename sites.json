@@ -47,10 +47,4 @@
         "url": "http://chaos2ch.com/index.rdf",
         "category": "vip"
     },
-    {
-        "id": "site8",
-        "name": "FF14速報",
-        "url": "https://ff14net.2chblog.jp/index.rdf",
-        "category": "game"
-    }
 ]
